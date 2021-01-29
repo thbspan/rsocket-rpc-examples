@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.test.rscoket'
+version '1.0.0-SNAPSHOT'
+
+dependencies {
+    implementation project(':service-idl')
+
+    implementation "com.google.protobuf:protobuf-java:$protobufVersion"
+
+    implementation "io.rsocket.rpc:rsocket-rpc-core:$rsocketRpcVersion"
+    implementation 'io.rsocket:rsocket-transport-netty:1.1.0'
+
+    implementation "org.apache.logging.log4j:log4j-api:$log4jVersion"
+    implementation "org.apache.logging.log4j:log4j-core:$log4jVersion"
+    implementation "org.apache.logging.log4j:log4j-slf4j-impl:$log4jVersion"
+}
+
+mainClassName = 'com.test.rsocket.service.ServiceMain'

@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+}
+
+group 'com.test.rscoket'
+version '1.0.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+tasks.named('wrapper') {
+    distributionType = Wrapper.DistributionType.ALL
+}
+
+subprojects {
+    apply plugin: 'idea'
+
+    ext {
+        protobufVersion = '3.14.0'
+        rsocketRpcVersion = '0.3.0'
+        log4jVersion = '2.14.0'
+    }
+
+    sourceCompatibility = 1.8
+
+    repositories {
+        jcenter()
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
